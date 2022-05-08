@@ -34,41 +34,50 @@ func main() {
 	var ini int
 
 	if reflect.DeepEqual(input, quada) {
-		fmt.Print(qua)
+		fmt.Printf(qua)
 		ini++
-	}
-	if inii(ini) {
-		fmt.Printf(" | ")
-		ini--
+		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
 	if reflect.DeepEqual(input, quadb) {
-		fmt.Print(qub)
+		if inii(ini) {
+			fmt.Printf(" || ")
+			ini--
+		}
+
+		fmt.Printf(qub)
 		ini++
-	}
-	if inii(ini) {
-		fmt.Printf(" | ")
-		ini--
+		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
 	if reflect.DeepEqual(input, quadc) {
-		fmt.Print(quc)
+		if inii(ini) {
+			fmt.Printf(" || ")
+
+			ini--
+		}
+		fmt.Printf(quc)
 
 		ini++
-	}
-	if inii(ini) {
-		fmt.Printf(" | ")
-		ini--
+		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
 	if reflect.DeepEqual(input, quadd) {
-		fmt.Print(qud)
+		if inii(ini) {
+			fmt.Printf(" || ")
+			ini--
+		}
+		fmt.Printf(qud)
 		ini++
+		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
-	if inii(ini) {
-		fmt.Printf(" | ")
-		ini--
-	}
+
 	if reflect.DeepEqual(input, quade) {
-		fmt.Print(que)
+		if inii(ini) {
+			fmt.Printf(" || ")
+			ini--
+		}
+		fmt.Printf(que)
 		ini++
+
+		fmt.Printf(" [%v] [%v]", lenX, lenY)
 
 	}
 
