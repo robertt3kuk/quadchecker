@@ -21,6 +21,7 @@ func main() {
 		for _, c := range err {
 			z01.PrintRune(c)
 		}
+		z01.PrintRune('\n')
 		return
 
 	}
@@ -32,10 +33,13 @@ func main() {
 	quadd, qud := QuadD(lenX, lenY)
 	quade, que := QuadE(lenX, lenY)
 	var ini int
+	var notvalid int
+	n := &notvalid
 
 	if reflect.DeepEqual(input, quada) {
 		fmt.Printf(qua)
 		ini++
+		*n++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
 	if reflect.DeepEqual(input, quadb) {
@@ -43,6 +47,7 @@ func main() {
 			fmt.Printf(" || ")
 			ini--
 		}
+		*n++
 
 		fmt.Printf(qub)
 		ini++
@@ -55,6 +60,7 @@ func main() {
 			ini--
 		}
 		fmt.Printf(quc)
+		*n++
 
 		ini++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
@@ -65,6 +71,7 @@ func main() {
 			ini--
 		}
 		fmt.Printf(qud)
+		*n++
 		ini++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}
@@ -76,12 +83,16 @@ func main() {
 		}
 		fmt.Printf(que)
 		ini++
-
+		*n++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
 
 	}
-
+	if notvalid == 0 {
+		fmt.Printf("Not a raid function")
+	}
+	fmt.Printf("\n")
 }
+
 func inii(ini int) bool {
 	if ini == 1 {
 		return true
@@ -96,10 +107,8 @@ func lenght(s [][]rune) (x, y int, err string) {
 		if x != len(c) {
 			return 0, 0, "Not a Raid function"
 		}
-
 	}
 	return x, y, ""
-
 }
 
 func QuadA(x, y int) ([]string, string) {
@@ -148,7 +157,6 @@ func QuadE(x, y int) ([]string, string) {
 }
 
 func XxY(x, y, c1, c2, yD, xD, abc int) []string {
-
 	delX := x - 2
 	delY := y - 2
 	var sd []string
@@ -186,13 +194,10 @@ func xaxys(x, delX, c1, c2, xD int) string {
 	var xax string
 	xax += string(rune(c1))
 	for delixx := 0; delixx < delX; delixx++ {
-
 		xax += string(rune(xD))
 	}
 	if x > 1 {
-
 		xax += string(rune(c2))
-
 	}
 	return xax
 }
@@ -202,25 +207,24 @@ func yaxys(y, delX, x, yD int) string {
 
 	yax += string(rune(yD))
 	for delixx := 0; delixx < delX; delixx++ {
-
 		yax += string(rune(' '))
 	}
 	if x > 1 {
-
 		yax += string(rune(yD))
 	}
 	return yax
 }
+
 func printif(s []string) {
 	for _, c := range s {
 		fmt.Printf("%v,\n", c)
 	}
 }
+
 func stringer(sd [][]rune) []string {
 	biqol := make([]string, len(sd))
 	for i := 0; i < len(sd); i++ {
 		biqol[i] = string(sd[i])
-
 	}
 	return biqol
 }
