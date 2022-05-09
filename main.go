@@ -48,7 +48,6 @@ func main() {
 			ini--
 		}
 		*n++
-
 		fmt.Printf(qub)
 		ini++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
@@ -56,12 +55,10 @@ func main() {
 	if reflect.DeepEqual(input, quadc) {
 		if inii(ini) {
 			fmt.Printf(" || ")
-
 			ini--
 		}
 		fmt.Printf(quc)
 		*n++
-
 		ini++
 		fmt.Printf(" [%v] [%v]", lenX, lenY)
 	}

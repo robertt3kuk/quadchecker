@@ -10,7 +10,7 @@ func main() {
 	first := atoi(args[0])
 	second := atoi(args[1])
 
-	QuadE(first, second)
+	QuadC(first, second)
 
 }
 
